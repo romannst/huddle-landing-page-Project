@@ -1,0 +1,237 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+/* end css reset */
+
+/* Color variables */
+:root {
+    --Violet: hsl(257, 40%, 49%);
+    --SoftMagenta: hsl(300, 69%, 71%);
+}
+
+h1, button {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Global container */
+body {
+    min-height: 100svh;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    background-color: var(--Violet);
+    background-image: url(../images/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: grid;
+    place-items: center;
+}
+@media (max-width: 800px) {
+    body {
+        background-image: url(../images/bg-mobile.svg);
+        background-size: auto;
+    }
+}
+@media (min-height: 1200px) {
+    body {
+        background-image: url(../images/bg-mobile.svg);
+        background-size: contain;
+    }
+}
+/* Container of Landing Page */
+.wrapper {
+    padding: 2rem;
+}
+@media (min-height: 1200px) {
+    .wrapper {
+        padding: 4rem 5rem;
+        height: 100%;
+    }
+}
+/* Landing Page content (section) */
+.lp-content {
+    display: flex;
+    flex-direction: column;
+}
+/* Top side of the section */
+.lp-content__logo {
+    margin-bottom: 5rem;
+}
+.lp-content__logo img {
+    max-width: 15.625rem;
+    height: auto;
+}
+
+/* Middle side of the section */
+.lp-content__hero {
+    display: flex;
+    gap: 4rem;
+}
+@media (max-width: 800px) {
+    .lp-content__logo a img {
+        max-width: 9.375rem;
+        margin-bottom: 0rem;
+        height: auto;
+    }
+    .lp-content__hero {
+        flex-direction: column;
+        margin-top: 0;
+    }
+}
+@media (min-height: 1200px) {
+    .lp-content {
+        height: 100%;
+        display: flex;
+    }
+    .lp-content__logo {
+        flex: .5;
+    }
+    .lp-content__logo a img {
+        max-width: 15.625rem;
+    }
+    .lp-content__hero {
+        flex: 4;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .lp-content__social-icons {
+        flex: .5;
+    }
+}
+.hero__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero__content {
+    max-width: 36.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+.content__title {
+    font-size: 2.688rem;
+    font-weight: 600;
+    margin-top: 3rem;
+}
+.content__paragraph {
+    font-size: 1.25rem;
+    color: #F6E9FE;
+    margin-bottom: 1.2rem;
+}
+.content__bttn {
+    font-weight: 400;
+    font-size: 1.25rem;
+    background-color: #fff;
+    color: var(--Violet);
+    border: none;
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.75);
+    transition: ease .4s;
+}
+.content__bttn:hover {
+    cursor: pointer;
+    background-color: var(--SoftMagenta);
+    color: #fff;
+    transition: ease .4s;
+}
+@media (max-width: 800px) {
+    .hero__content {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    .content__title {
+        font-size: 1.563rem;
+        margin-top: 0;
+    }
+    .content__paragraph {
+        font-size: 1.031rem;
+    }
+    .content__bttn {
+        font-size: 0.875rem;
+        padding: .5rem 4.5rem;
+        -webkit-box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.75);
+        box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.75);
+    }
+}
+@media (min-height: 1200px) {
+    .hero__content {
+        gap: 2rem;
+    }
+    .content__title {
+        font-size: 2.813rem;
+    }
+    .content__paragraph {
+        font-size: 1.938rem;
+    }
+    .content__bttn {
+        font-size: 1.313rem;
+        padding: 1rem 9rem;
+    }
+}
+
+/* Bottom side of the section */
+.lp-content__social-icons {
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+}
+.social-icons__wrapper {
+    display: flex;
+    gap: 1rem;
+}
+.social-icons__wrapper svg {
+    fill: #fff;
+    max-width: 2.5rem;
+    height: auto;
+    transition: ease .4s;
+}
+.social-icons__wrapper svg:hover {
+    cursor: pointer;
+    fill: var(--SoftMagenta);
+    transition: ease .4s;
+}
+@media (max-width: 800px) {
+    .lp-content__social-icons {
+        justify-content: center;
+        padding: 3rem 0rem 0rem;
+    }
+    .social-icons__wrapper svg {
+        max-width: 1.375rem;
+    }   
+}
+@media (min-height: 1200px) {
+    .social-icons__wrapper svg {
+        max-width: 2.813rem;
+    }
+}
